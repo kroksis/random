@@ -7,7 +7,7 @@ import (
 
 const (
 	readableString = "ABCDEFHJLMNQRTUVWXYZabcefghijkmnopqrtuvwxyz23479"
-	alnumString    = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+	alphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 )
 
 func init() {
@@ -23,7 +23,7 @@ func Int(maxValue int) int {
 func String(length int) string {
 	buf := make([]byte, length)
 	for i := 0; i < length; i++ {
-		buf[i] = alnumString[rand.Intn(len(alnumString)-1)]
+		buf[i] = alphaNumericString[rand.Intn(len(alphaNumericString) - 1)]
 	}
 	return string(buf)
 }
@@ -32,7 +32,7 @@ func String(length int) string {
 func StringReadable(length int) string {
 	buf := make([]byte, length)
 	for i := 0; i < length; i++ {
-		buf[i] = readableString[rand.Intn(len(readableString)-1)]
+		buf[i] = readableString[rand.Intn(len(readableString) - 1)]
 	}
 	return string(buf)
 }
